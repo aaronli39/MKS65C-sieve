@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
+#include "sieve.h"
 
-int find_nth_prime(int n) {
+int sieve(int n) {
     char * arr = calloc(sizeof(char), ceil(1.15 * n * log(n)));
     int num = ceil(1.15 * n * log(n));
     int i, ret = 2;
@@ -31,10 +33,4 @@ int find_nth_prime(int n) {
 
     // free(arr);
     return ret;
-}
-
-int main() {
-    int n = 1000000;
-    printf("Searching for: %dth prime: %d\n", n, find_nth_prime(n));
-    return 0;
 }
